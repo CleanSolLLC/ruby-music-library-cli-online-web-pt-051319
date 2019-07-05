@@ -1,14 +1,13 @@
 require 'pry'
 
-class Song
+class Genre
 
-attr_accessor :name, :artist
+attr_accessor :name
 
 @@all = []
 
-  def initialize(name, artist = nil)
+  def initialize(name)
     @name = name
-    @artist = artist
   end
 
   def save
