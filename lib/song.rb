@@ -25,7 +25,7 @@ attr_accessor :name, :artist
 
   def artist=(song)
     binding.pry
-    Artist.add_song(song)
+    Artist.add_song(self)
   end
 
   def self.destroy_all
