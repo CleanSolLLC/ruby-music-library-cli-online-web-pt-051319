@@ -24,6 +24,7 @@ attr_accessor :name, :artist
   end
 
   def artist=(song)
+    binding.pry
     Artist.add_song(song)
   end
 
