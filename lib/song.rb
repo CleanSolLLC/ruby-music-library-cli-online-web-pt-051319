@@ -24,7 +24,7 @@ attr_accessor :name, :artist
   end
 
   def artist=(song)
-    Artist.add_song(self)
+    artist.add_song(self)
   end
 
   def self.destroy_all
