@@ -21,6 +21,7 @@ attr_accessor :name, :artist
 
   def self.create(name)
     song = self.new(name).tap{|s| s.save}
+    Artist.add_song(song)
   end
 
   def self.destroy_all
