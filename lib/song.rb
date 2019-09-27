@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Song
   attr_accessor :name
   attr_reader :artist, :genre
@@ -18,12 +19,30 @@ class Song
   def genre=(genre)
     @genre = genre
     genre.songs << self unless genre.songs.include?(self)
+=======
+require 'pry'
+
+class Song
+
+attr_accessor :name, :artist
+
+@@all = []
+
+  def initialize(name, artist = nil)
+    @name = name
+    @artist = artist
+  end
+
+  def save
+    @@all << self
+>>>>>>> test
   end
 
   def self.all
     @@all
   end
 
+<<<<<<< HEAD
   def self.destroy_all
     all.clear
   end
@@ -62,4 +81,14 @@ class Song
   def self.create_from_filename(filename)
     new_from_filename(filename).tap{ |s| s.save }
   end
+=======
+  def self.create(name)
+    song = self.new(name).tap{|s| s.save}
+  end
+
+  def self.destroy_all
+    all.clear
+  end
+
+>>>>>>> test
 end

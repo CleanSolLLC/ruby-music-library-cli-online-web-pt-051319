@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Genre
   extend Concerns::Findable
 
@@ -35,4 +36,34 @@ class Genre
   def artists
     songs.collect{ |s| s.artist }.uniq
   end
+=======
+require 'pry'
+
+class Genre
+
+attr_accessor :name
+
+@@all = []
+
+  def initialize(name)
+    @name = name
+  end
+
+  def save
+    @@all << self
+  end
+
+  def self.all
+    @@all
+  end
+
+  def self.create(name)
+    song = self.new(name).tap{|s| s.save}
+  end
+
+  def self.destroy_all
+    all.clear
+  end
+
+>>>>>>> test
 end
